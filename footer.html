@@ -1,0 +1,209 @@
+<style>
+    .footer {
+        background: #1e3a5f;
+        color: #ffffff;
+        padding: 60px 20px 30px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-section h3 {
+        color: #d4af37;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+    }
+
+    .footer-section p {
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-links a:hover {
+        color: #d4af37;
+        padding-left: 5px;
+    }
+
+    .footer-links i {
+        color: #d4af37;
+        font-size: 0.9rem;
+    }
+
+    .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .footer-contact-item i {
+        color: #d4af37;
+        font-size: 1.2rem;
+        margin-top: 3px;
+    }
+
+    .footer-contact-item a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-contact-item a:hover {
+        color: #d4af37;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(212, 175, 55, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #d4af37;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background: #d4af37;
+        color: #1e3a5f;
+        transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer-bottom p {
+        margin: 5px 0;
+    }
+
+    .footer-bottom a {
+        color: #d4af37;
+        text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+</style>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dr. Delgado</h3>
+                <p>Dermatólogo especializado en el cuidado integral de la piel. Brindamos atención de calidad con tecnología de vanguardia en Cúcuta y sus alrededores.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/573114701386" class="social-link" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com" class="social-link" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com" class="social-link" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                    <li><a href="index.html#servicios"><i class="fas fa-chevron-right"></i> Servicios</a></li>
+                    <li><a href="index.html#sobre-mi"><i class="fas fa-chevron-right"></i> Sobre Mí</a></li>
+                    <li><a href="index.html#zonas"><i class="fas fa-chevron-right"></i> Zonas de Atención</a></li>
+                    <li><a href="index.html#contacto"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Dermatología General</a></li>
+                    <li><a href="/clinica-cuidado-piel-cucuta.html"><i class="fas fa-chevron-right"></i> Clínica del Cuidado de la Piel</a></li>
+                    <li><a href="/spa-facial-cucuta.html"><i class="fas fa-chevron-right"></i> Spa Facial</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <a href="tel:+573114701386">+57 311 470 1386</a>
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <a href="https://wa.me/573114701386" target="_blank">WhatsApp</a>
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        Cúcuta, Norte de Santander<br>
+                        Colombia
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        Lunes - Viernes: 8:00 AM - 6:00 PM<br>
+                        Sábados: 8:00 AM - 12:00 PM
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dr. Delgado - Dermatólogo en Cúcuta. Todos los derechos reservados.</p>
+            <p>Desarrollado con <i class="fas fa-heart" style="color: #d4af37;"></i> para el cuidado de tu piel</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,200 @@
+<style>
+    .contact-form {
+        background: white;
+        padding: 50px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h3 {
+        font-size: 2rem;
+        color: #1e3a5f;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #1e3a5f;
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .form-group label span {
+        color: #d4af37;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: 'Poppins', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: #d4af37;
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    }
+
+    textarea.form-control {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(135deg, #1e3a5f, #2c5f8d);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .submit-button:hover {
+        background: linear-gradient(135deg, #2c5f8d, #1e3a5f);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(30, 58, 95, 0.3);
+    }
+
+    .submit-button i {
+        font-size: 1.2rem;
+    }
+
+    .form-note {
+        margin-top: 15px;
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+    }
+
+    .form-note i {
+        color: #25D366;
+        margin-right: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .contact-form {
+            padding: 30px 20px;
+        }
+
+        .contact-form h3 {
+            font-size: 1.6rem;
+        }
+    }
+</style>
+
+<div class="contact-form">
+    <h3>Envíanos un Mensaje</h3>
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="nombre">Nombre Completo <span>*</span></label>
+            <input 
+                type="text" 
+                id="nombre" 
+                name="nombre" 
+                class="form-control" 
+                placeholder="Ej: Juan Pérez"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="telefono">Número de Teléfono <span>*</span></label>
+            <input 
+                type="tel" 
+                id="telefono" 
+                name="telefono" 
+                class="form-control" 
+                placeholder="Ej: 3114701386"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="mensaje">Describe tu Consulta <span>*</span></label>
+            <textarea 
+                id="mensaje" 
+                name="mensaje" 
+                class="form-control" 
+                placeholder="Cuéntanos sobre tu problema o consulta dermatológica..."
+                required
+            ></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">
+            <i class="fab fa-whatsapp"></i>
+            Enviar por WhatsApp
+        </button>
+
+        <p class="form-note">
+            <i class="fas fa-lock"></i>
+            Tu información es confidencial y será enviada directamente por WhatsApp
+        </p>
+    </form>
+</div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const nombre = document.getElementById('nombre').value;
+        const telefono = document.getElementById('telefono').value;
+        const mensaje = document.getElementById('mensaje').value;
+        
+        // Create WhatsApp message
+        const whatsappMessage = `*Consulta Dermatológica*%0A%0A` +
+            `*Nombre:* ${encodeURIComponent(nombre)}%0A` +
+            `*Teléfono:* ${encodeURIComponent(telefono)}%0A%0A` +
+            `*Consulta:*%0A${encodeURIComponent(mensaje)}`;
+        
+        // WhatsApp URL
+        const whatsappURL = `https://wa.me/573114701386?text=${whatsappMessage}`;
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappURL, '_blank');
+        
+        // Optional: Reset form after submission
+        setTimeout(() => {
+            this.reset();
+        }, 1000);
+    });
+
+    // Phone number formatting
+    document.getElementById('telefono').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        e.target.value = value;
+    });
+
+    // Form validation feedback
+    const inputs = document.querySelectorAll('.form-control');
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            if (this.value.trim() === '' && this.hasAttribute('required')) {
+                this.style.borderColor = '#ff6b6b';
+            } else {
+                this.style.borderColor = '#d4af37';
+            }
+        });
+
+        input.addEventListener('focus', function() {
+            this.style.borderColor = '#d4af37';
+        });
+    });
+</script>

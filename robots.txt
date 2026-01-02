@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://dermatologocucuta.dondeseria.com/sitemap.xml
